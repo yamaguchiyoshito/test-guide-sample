@@ -1,6 +1,6 @@
 # AGENTS.md
 
-このファイルは、`/Users/yamaguchi_yoshito/Downloads/React/test-guide` で作業するエージェント向けの実務ルールです。
+このファイルは、`/test-guide` で作業するエージェント向けの実務ルールです。
 
 ## 1. 基本方針
 
