@@ -1,0 +1,30 @@
+schemas:
+  User:
+    type: object
+    required:
+      - id
+      - name
+      - email
+      - age
+      - role
+    properties:
+      id:
+        type: string
+        example: u_001
+      name:
+        type: string
+        example: 山田 太郎
+      email:
+        type: string
+        format: email
+        example: taro@example.com
+      age:
+        type: integer
+        minimum: 0
+        example: 30
+      role:
+        type: string
+        enum:
+          - user
+          - admin
+          - guest

@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: Test Guide Sample API
+  version: 1.1.1
+  description: API contract split by domain paths and shared schemas.
+servers:
+  - url: http://127.0.0.1:3200
+
+tags:
+  - name: auth
+    description: Authentication APIs
+  - name: users
+    description: User management APIs
+
+paths:
+  /api/login:
+    $ref: './openapi/paths/auth.yaml#/paths/~1api~1login'
+  /api/users:
+    $ref: './openapi/paths/users.yaml#/paths/~1api~1users'
+  /api/users/{id}:
+    $ref: './openapi/paths/users.yaml#/paths/~1api~1users~1{id}'
+
+components:
+  schemas:
+    ErrorResponse:
+      $ref: './openapi/components/schemas/common.yaml#/schemas/ErrorResponse'
+    LoginRequest:
+      $ref: './openapi/components/schemas/auth.yaml#/schemas/LoginRequest'
+    LoginResponse:
+      $ref: './openapi/components/schemas/auth.yaml#/schemas/LoginResponse'
+    User:
+      $ref: './openapi/components/schemas/user.yaml#/schemas/User'
+
+  securitySchemes:
+    bearerAuth:
+      $ref: './openapi/components/security/schemes.yaml#/securitySchemes/bearerAuth'

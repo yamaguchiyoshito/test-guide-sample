@@ -1,0 +1,52 @@
+responses:
+  BadRequest:
+    description: Invalid input
+    headers:
+      X-Correlation-ID:
+        $ref: '../headers/common.yaml#/headers/XCorrelationId'
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/common.yaml#/schemas/ErrorResponse'
+
+  Unauthorized:
+    description: Authentication failed
+    headers:
+      X-Correlation-ID:
+        $ref: '../headers/common.yaml#/headers/XCorrelationId'
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/common.yaml#/schemas/ErrorResponse'
+
+  NotFound:
+    description: Resource not found
+    headers:
+      X-Correlation-ID:
+        $ref: '../headers/common.yaml#/headers/XCorrelationId'
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/common.yaml#/schemas/ErrorResponse'
+
+  TooManyRequests:
+    description: Rate limit exceeded
+    headers:
+      X-Correlation-ID:
+        $ref: '../headers/common.yaml#/headers/XCorrelationId'
+      Retry-After:
+        $ref: '../headers/common.yaml#/headers/RetryAfter'
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/common.yaml#/schemas/ErrorResponse'
+
+  InternalServerError:
+    description: Internal server error
+    headers:
+      X-Correlation-ID:
+        $ref: '../headers/common.yaml#/headers/XCorrelationId'
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/common.yaml#/schemas/ErrorResponse'

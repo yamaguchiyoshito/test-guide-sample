@@ -1,0 +1,40 @@
+stages:
+  - install
+  - lint
+  - test
+  - e2e
+
+variables:
+  NODE_VERSION: "20"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .pnpm-store
+    - node_modules/
+
+install:
+  stage: install
+  image: node:${NODE_VERSION}
+  script:
+    - corepack enable
+    - pnpm install --frozen-lockfile
+
+lint:
+  stage: lint
+  image: node:${NODE_VERSION}
+  script:
+    - pnpm lint
+    - pnpm type-check
+
+test:unit:
+  stage: test
+  image: node:${NODE_VERSION}
+  script:
+    - pnpm test:unit
+
+test:e2e:
+  stage: e2e
+  image: mcr.microsoft.com/playwright:v1.58.2-noble
+  script:
+    - pnpm test:e2e

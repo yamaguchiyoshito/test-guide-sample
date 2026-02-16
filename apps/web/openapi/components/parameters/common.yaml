@@ -1,0 +1,14 @@
+parameters:
+  UserId:
+    name: id
+    in: path
+    required: true
+    schema:
+      type: string
+
+  CorrelationId:
+    name: X-Correlation-ID
+    in: header
+    required: false
+    schema:
+      type: string

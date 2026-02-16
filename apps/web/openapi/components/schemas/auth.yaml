@@ -1,0 +1,29 @@
+schemas:
+  LoginRequest:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+        format: email
+        example: user@example.com
+      password:
+        type: string
+        minLength: 8
+        example: password123
+
+  LoginResponse:
+    type: object
+    required:
+      - token
+      - expiresAt
+    properties:
+      token:
+        type: string
+        example: jwt-token-placeholder
+      expiresAt:
+        type: string
+        format: date-time
+        example: 2026-12-31T23:59:59Z

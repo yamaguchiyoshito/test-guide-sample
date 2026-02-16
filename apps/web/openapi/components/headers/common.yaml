@@ -1,0 +1,10 @@
+headers:
+  XCorrelationId:
+    description: Correlation id for tracing request/response.
+    schema:
+      type: string
+
+  RetryAfter:
+    description: Suggested retry wait time in seconds.
+    schema:
+      type: string

@@ -1,0 +1,82 @@
+paths:
+  /api/users:
+    get:
+      operationId: listUsers
+      summary: List users
+      tags:
+        - users
+      responses:
+        '200':
+          description: User list
+          headers:
+            X-Correlation-ID:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '../components/schemas/user.yaml#/schemas/User'
+        '429':
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/common.yaml#/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/common.yaml#/schemas/ErrorResponse'
+
+  /api/users/{id}:
+    get:
+      operationId: getUserById
+      summary: Get a user by id
+      tags:
+        - users
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User detail
+          headers:
+            X-Correlation-ID:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/user.yaml#/schemas/User'
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/common.yaml#/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/common.yaml#/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/common.yaml#/schemas/ErrorResponse'

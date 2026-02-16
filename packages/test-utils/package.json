@@ -1,0 +1,17 @@
+{
+  "name": "@repo/test-utils",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./assertions/*": "./src/assertions/*",
+    "./async/*": "./src/async/*",
+    "./contract/*": "./src/contract/*",
+    "./factory/*": "./src/factory/*",
+    "./metrics/*": "./src/metrics/*",
+    "./msw/*": "./src/msw/*",
+    "./random/*": "./src/random/*",
+    "./react/*": "./src/react/*",
+    "./time/*": "./src/time/*"
+  }
+}

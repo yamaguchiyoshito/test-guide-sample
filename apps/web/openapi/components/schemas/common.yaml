@@ -1,0 +1,20 @@
+schemas:
+  ErrorResponse:
+    type: object
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: string
+        example: INVALID_REQUEST
+      message:
+        type: string
+        example: Request is invalid
+      fieldErrors:
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            type: string
+        nullable: true

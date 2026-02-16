@@ -1,0 +1,25 @@
+# dependencies
+**/node_modules/
+
+# build outputs
+apps/web/.next/
+apps/web/out/
+
+# test artifacts
+apps/web/coverage/
+apps/web/playwright-report/
+apps/web/test-results/
+
+# TypeScript cache
+apps/web/tsconfig.tsbuildinfo
+
+# logs
+*.log
+
+# env files
+.env
+.env.*
+!.env.example
+
+# OS/editor
+.DS_Store
