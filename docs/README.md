@@ -6,12 +6,13 @@
 2. `vitest-guide.md`（Unit/Component Test）
 3. `storybook-guide.md`（Story/Interaction/A11y）
 4. `playwright-guide.md`（E2E）
-5. `msw-guide.md`（APIモック）
-6. `factory-pattern.md`（テストデータ）
-7. `troubleshooting.md`（障害対応）
-8. `faq.md`（運用時の判断）
-9. `glossary.md`（用語定義）
-10. `../apps/web/docs/logging-guide.md`（ログ運用）
+5. `accessibility-test-integration-guideline.md`（a11y統合実装）
+6. `msw-guide.md`（APIモック）
+7. `factory-pattern.md`（テストデータ）
+8. `troubleshooting.md`（障害対応）
+9. `faq.md`（運用時の判断）
+10. `glossary.md`（用語定義）
+11. `../apps/web/docs/logging-guide.md`（ログ運用）
 
 ## 正本ルール
 
